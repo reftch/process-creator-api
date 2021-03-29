@@ -1,5 +1,5 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { IProjectDescription } from 'common';
+import { IProjectDescription } from '../../model/folder';
 
 @ObjectType()
 export class ProjectDescription implements IProjectDescription {

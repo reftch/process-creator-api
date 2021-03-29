@@ -1,7 +1,6 @@
 
 import { Field, ObjectType } from '@nestjs/graphql';
-import { IProcess } from 'common';
-import { IAttributes, IGeneralSettings, IProcessConfiguration, ISystemSetting } from 'common/src/model/process';
+import { IAttributes, IGeneralSettings, IProcessConfiguration, ISystemSetting, IProcess } from '../../model/process';
 
 @ObjectType()
 export class Process implements IProcess {

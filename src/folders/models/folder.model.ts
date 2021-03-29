@@ -1,5 +1,5 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { IFolder, IFolderFile } from 'common';
+import { IFolder, IFolderFile } from '../../model/folder';
 
 @ObjectType()
 export class Folder implements IFolder {
