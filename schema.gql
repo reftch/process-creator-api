@@ -1,0 +1,68 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Folder {
+  name: String!
+  path: String
+  parent: String
+  created: String
+  files: [FolderFile!]!
+}
+
+type FolderFile {
+  name: String!
+  path: String
+  created: String
+  isDirectory: Boolean!
+}
+
+type ProjectDescription {
+  name: String!
+  comment: String
+  projects: String
+  buildSpec: String
+  natures: String
+}
+
+type Process {
+  ProcessConfiguration: ProcessConfigurationImpl!
+}
+
+type ProcessConfigurationImpl {
+  GeneralSettings: GeneralSettingsImpl!
+}
+
+type GeneralSettingsImpl {
+  SystemSettings: [SystemSettingImpl!]!
+}
+
+type SystemSettingImpl {
+  Deployment_URI: String!
+  ProgDir: String!
+  DataDir: String!
+  attributes: Attributes!
+}
+
+type Attributes {
+  SystemName: String!
+}
+
+type Query {
+  folder(path: String = ""): Folder!
+  userHome: Folder!
+  process(path: String = ""): Process!
+}
+
+type Mutation {
+  add(newFolderData: NewFolderInput!): Folder!
+  remove(name: String!): Boolean!
+}
+
+input NewFolderInput {
+  path: String!
+}
+
+type Subscription {
+  projectFound: ProjectDescription!
+}
